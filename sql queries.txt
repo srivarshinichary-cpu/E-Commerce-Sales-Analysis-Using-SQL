@@ -1,0 +1,101 @@
+
+   QUERY 1: TOTAL SALES
+  
+
+SELECT ROUND(SUM(Sales),2) AS Total_Sales
+FROM samplesuperstore;
+
+
+
+   QUERY 2: TOTAL PROFIT
+ 
+
+SELECT ROUND(SUM(Profit),2) AS Total_Profit
+FROM samplesuperstore;
+
+
+
+   QUERY 3: SALES BY CATEGORY
+   
+
+SELECT Category,
+       ROUND(SUM(Sales),2) AS Revenue
+FROM samplesuperstore
+GROUP BY Category
+ORDER BY Revenue DESC;
+
+
+
+   QUERY 4: PROFIT BY CATEGORY
+  
+
+SELECT Category,
+       ROUND(SUM(Profit),2) AS Total_Profit
+FROM samplesuperstore
+GROUP BY Category
+ORDER BY Total_Profit DESC;
+
+
+
+   QUERY 5: SALES BY REGION
+  
+
+SELECT Region,
+       ROUND(SUM(Sales),2) AS Revenue
+FROM samplesuperstore
+GROUP BY Region
+ORDER BY Revenue DESC;
+
+
+
+   QUERY 6: TOP 10 STATES BY SALES
+  
+
+SELECT State,
+       ROUND(SUM(Sales),2) AS Revenue
+FROM samplesuperstore
+GROUP BY State
+ORDER BY Revenue DESC
+LIMIT 10;
+
+
+
+   QUERY 7: TOP 10 CITIES BY SALES
+ 
+
+SELECT City,
+       ROUND(SUM(Sales),2) AS Revenue
+FROM samplesuperstore
+GROUP BY City
+ORDER BY Revenue DESC
+LIMIT 10;
+
+
+
+   QUERY 8: AVERAGE DISCOUNT BY CATEGORY
+   
+
+SELECT Category,
+       ROUND(AVG(Discount),2) AS Avg_Discount
+FROM samplesuperstore
+GROUP BY Category;
+
+   QUERY 9: QUANTITY SOLD BY CATEGORY
+ 
+
+SELECT Category,
+       SUM(Quantity) AS Total_Quantity
+FROM samplesuperstore
+GROUP BY Category
+ORDER BY Total_Quantity DESC;
+
+
+
+   QUERY 10: REGION-WISE PROFIT
+  
+
+SELECT Region,
+       ROUND(SUM(Profit),2) AS Total_Profit
+FROM samplesuperstore
+GROUP BY Region
+ORDER BY Total_Profit DESC;
